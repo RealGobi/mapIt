@@ -4,6 +4,7 @@ import MainHeader from './MainHeader';
 import { Link } from 'react-router-dom';
 
 import './MainNavigation.css';
+import NavLinks from './NavLinks';
 
 const MainNavigation = props => {
   return (
@@ -18,7 +19,9 @@ const MainNavigation = props => {
           MapIt
         </Link>
       </h1>
-      <nav>...</nav>
+      <nav>
+      <NavLinks></NavLinks>
+      </nav>
     </MainHeader>
   )
 }
