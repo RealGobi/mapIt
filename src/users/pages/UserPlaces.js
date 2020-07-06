@@ -7,7 +7,7 @@ const DUMMY_DATA = [
     id:'p1',
     title: 'Empire State Building',
     description: 'One big bulding in New York!',
-    imageUrl: 'https://picsum.photos/300/400',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/800px-Empire_State_Building_%28aerial_view%29.jpg',
     address: 'New York, NY 10001',
     location: {
       lat: 40.7485452,
@@ -19,7 +19,7 @@ const DUMMY_DATA = [
     id:'p2',
     title: 'Empire State Building',
     description: 'One big bulding in New York!',
-    imageUrl: 'https://picsum.photos/200/300',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/800px-Empire_State_Building_%28aerial_view%29.jpg',
     address: 'New York, NY 10001',
     location: {
       lat: 40.7485452,
