@@ -8,7 +8,7 @@ import './NewPlace.css';
 const NewPlace = () => {
   return (
     <form className="place-form">
-      <Input element='input' type="text" lable="Title" />
+      <Input element='input' type="text" lable="Title" validator={[]} errorText="Please enter a vailid title" />
     </form>
   )
 }
