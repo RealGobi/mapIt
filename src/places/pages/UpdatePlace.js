@@ -6,6 +6,9 @@ import Button from '../../shared/components/FormElements/Button';
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/components/UIElements/util/validator';
 
 
+import './PlaceForm.css';
+
+
 const DUMMY_DATA = [
   {
     id:'p1',
@@ -48,7 +51,7 @@ const UpdatePlace = () => {
   };
 
   return (
-    <form>
+    <form className='place-form'>
       <Input 
         id='title' 
         element='input' 
