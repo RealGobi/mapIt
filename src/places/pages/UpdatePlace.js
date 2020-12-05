@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useForm } from '../../shared/hooks/form-hook';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
-import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/components/UIElements/util/validator';
+import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/validator';
 
 
 import './PlaceForm.css';
@@ -25,7 +25,7 @@ const DUMMY_DATA = [
   {
     id:'p2',
     title: 'Empire State Building',
-    description: 'One big bulding in New York!',
+    description: 'One big building in New York!',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/800px-Empire_State_Building_%28aerial_view%29.jpg',
     address: 'New York, NY 10001',
     location: {
@@ -37,7 +37,7 @@ const DUMMY_DATA = [
   {
     id:'p3',
     title: 'Building',
-    description: 'One big bulding in New York!',
+    description: 'One big building in New York!',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/800px-Empire_State_Building_%28aerial_view%29.jpg',
     address: 'New York, NY 10001',
     location: {
@@ -51,21 +51,40 @@ const DUMMY_DATA = [
 
 const UpdatePlace = () => {
 
-  const placeId = useParams().placeId;
-  const identifier = DUMMY_DATA.find(p => p.id === placeId);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [formState, inputHandler] = useForm({
+  const placeId = useParams().placeId;
+  
+  const [formState, inputHandler, setFormData] = useForm({
     title: {
-      value: identifier.title,
-      isValid: true
+      value: '',
+      isValid: false
     }, 
     description: {
-      value: identifier.description,
-      isValid: true
+      value: '',
+      isValid: false
     }
   },
-  true
-);
+  false
+  );
+  
+  const identifier = DUMMY_DATA.find(p => p.id === placeId);
+
+  useEffect(() => {
+    setFormData({
+      title: {
+        value: identifier.title,
+        isValid: true
+      }, 
+      description: {
+        value: identifier.description,
+        isValid: true
+      }
+    },
+    true
+    );
+    setIsLoading(false);
+  }, [setFormData, identifier])
 
 
   const updateSubmitHandler = e  => {
@@ -83,6 +102,14 @@ const UpdatePlace = () => {
   };
 
   console.log(formState.isValid);
+
+  if(isLoading) {
+    return ( 
+      <div className='center'>
+        <h2>Looooading!</h2>
+      </div>
+    );
+  };
 
   return (
     <form className='place-form'onSubmit={updateSubmitHandler}>
