@@ -63,7 +63,11 @@ const UpdatePlace = () => {
       value: identifier.description,
       isValid: true
     }
-  }, true)
+
+  const updateSubmitHandler = e  => {
+    e.preventDefault();
+    console.log(formState.inputs);
+  }
 
 
   if (!identifier) {
@@ -77,7 +81,7 @@ const UpdatePlace = () => {
   console.log(formState.isValid);
 
   return (
-    <form className='place-form'>
+    <form className='place-form'onSubmit={updateSubmitHandler}>
       <Input 
         id='title' 
         element='input' 
