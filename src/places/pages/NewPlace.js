@@ -27,6 +27,7 @@ const NewPlace = () => {
     const placeSubmitHandler = event => {
       event.preventDefault();
       console.log(formState.inputs);
+    }
 
   return (
     <form className="place-form" onSubmit={placeSubmitHandler}>
@@ -37,5 +38,5 @@ const NewPlace = () => {
     </form>
   )
 }
-}
+
 export default NewPlace;
