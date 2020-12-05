@@ -63,6 +63,10 @@ const UpdatePlace = () => {
       value: identifier.description,
       isValid: true
     }
+  },
+  true
+);
+
 
   const updateSubmitHandler = e  => {
     e.preventDefault();
