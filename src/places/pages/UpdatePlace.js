@@ -34,6 +34,18 @@ const DUMMY_DATA = [
     },
     creator: 'u2'
   },
+  {
+    id:'p3',
+    title: 'Building',
+    description: 'One big bulding in New York!',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/800px-Empire_State_Building_%28aerial_view%29.jpg',
+    address: 'New York, NY 10001',
+    location: {
+      lat: 40.7485452,
+      lng: -73.9857635
+    },
+    creator: 'u2'
+  },
 ]
 
 
