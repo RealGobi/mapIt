@@ -78,8 +78,6 @@ const UpdatePlace = () => {
           value: identifier.title,
           isValid: true
         },
-      }, 
-        },
         description: {
           value: identifier.description,
           isValid: true
