@@ -4,6 +4,7 @@ import { useForm } from '../../shared/hooks/form-hook';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
 import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/validator';
+import Card from '../../shared/components/UIElements/Card';
 
 
 import './PlaceForm.css';
@@ -100,7 +101,9 @@ const UpdatePlace = () => {
   if (!identifier) {
     return ( 
       <div className='center'>
-        <h2>No place found</h2>
+        <Card>
+          <h2>No place found</h2>
+        </Card>
       </div>
     );
   };
