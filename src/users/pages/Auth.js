@@ -28,6 +28,26 @@ const Auth = () => {
     e.preventDefault();
     console.log(formState.inputs);
   };
+
+  const switchSignupHandler = () => {
+    if(!isLogin) {
+      setFormData({
+        ...formState.inputs, 
+        name: undefined
+      },
+         formState.inputs.email.isValid && formState.inputs.password.isValid);
+    } else {
+      setFormData({
+        ...formState.inputs,
+        name: {
+          value: '',
+          isValid: false
+        }
+      }, false)
+    }
+    setIsLogin(prevMode => !prevMode);
+  };
+
   return (
     <div>
       <Card className="authentication">
