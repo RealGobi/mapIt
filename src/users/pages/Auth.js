@@ -12,6 +12,7 @@ const Auth = () => {
         <h2>Login</h2>
         <hr />
         <form onSubmit={loginHandler}>
+          {!isLogin && <Input element='input' id='name' type='text' label='Name' validators={[VALIDATOR_REQUIRE]} errorText='Enter a name' onInput={inputHandler} /> }
           <Input id="email" 
                 type="email" 
                 label="Email" 
