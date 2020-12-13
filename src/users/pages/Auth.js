@@ -8,6 +8,8 @@ import Button from '../../shared/components/FormElements/Button';
 import './Auth.css';
 
 const Auth = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
   const [formState, inputHandler, setFormData] = useForm({
     email: {
       value: '',
