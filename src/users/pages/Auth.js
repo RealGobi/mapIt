@@ -1,7 +1,27 @@
 import React, { useState } from 'react'
 import Input from '../../shared/components/FormElements/Input';
+import Card from '../../shared/components/UIElements/Card';
+import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/validator';
+import { useForm } from '../../shared/hooks/form-hook';
+import Button from '../../shared/components/FormElements/Button';
+
 import './Auth.css';
+
 const Auth = () => {
+  const [formState, inputHandler, setFormData] = useForm({
+    email: {
+      value: '',
+      isValid: false
+    }, 
+    password: {
+      value: '',
+      isValid: false
+    }
+  },
+  false
+  );
+
+
   const loginHandler = e => {
     e.preventDefault();
     console.log(formState.inputs);
