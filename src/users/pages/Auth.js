@@ -8,6 +8,29 @@ const Auth = () => {
   };
   return (
     <div>
+      <Card className="authentication">
+        <h2>Login</h2>
+        <hr />
+        <form onSubmit={loginHandler}>
+          <Input id="email" 
+                type="email" 
+                label="Email" 
+                element='input' 
+                onInput={inputHandler} 
+                validators={[VALIDATOR_EMAIL()]} 
+                errorText={'Enter a vaild email'}
+                />
+          <Input id="password" 
+                type="password" 
+                label="Password" 
+                element='input' 
+                onInput={inputHandler} 
+                validators={[VALIDATOR_MINLENGTH(6)]}  
+                errorText={'Enter a vaild password, at least 6 characters'} 
+                />
+          <Button type='submit' disabled={!formState.isValid} >{isLogin ?  'Login' : 'Signup'}</Button>
+        </form>
+      </Card>
     </div>
   )
 }
