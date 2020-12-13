@@ -7,9 +7,12 @@ import MainNavigation from './shared/components/Navigation/MainNavigation';
 import UserPlaces from './places/pages/UserPlaces';
 import UpdatePlace from './places/pages/UpdatePlace';
 import Auth from './users/pages/Auth';
+import { AuthContext } from './shared/contex/auth-context';
 
 const App = () => {
-  return <Router>
+  return (
+      <AuthContext.Provider>
+        <Router>
           <MainNavigation />
           <main>
             <Switch>
@@ -32,6 +35,7 @@ const App = () => {
             </Switch>
           </main>
         </Router>
-      }
+      </AuthContext.Provider>
+  )};
 
 export default App;
