@@ -30,6 +30,7 @@ const Auth = () => {
                 />
           <Button type='submit' disabled={!formState.isValid} >{isLogin ?  'Login' : 'Signup'}</Button>
         </form>
+        <Button inverse onClick={switchSignupHandler}>{isLogin ? 'Switch to Signup' : 'Switch to Login'}</Button>
       </Card>
     </div>
   )
