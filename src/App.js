@@ -21,6 +21,14 @@ const logOut = useCallback(() => {
   setIsLoggedIn(false);
 }, []);
 
+let routes;
+
+if(isLogin){
+  routes = ();
+} else {
+  routes = ();
+};
+
   return (
       <AuthContext.Provider value={{ 
         isLoggedIn: isLoggedIn, 
