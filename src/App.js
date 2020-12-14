@@ -23,10 +23,39 @@ const logOut = useCallback(() => {
 
 let routes;
 
-if(isLogin){
-  routes = ();
+if(isLoggedIn){
+  routes = (
+    <Switch>
+      <Route path="/" exact>
+        <Users />
+      </Route>
+      <Route path="/:userId/places/" exact>
+        <UserPlaces />
+      </Route>
+      <Route path="/places/new" exact>
+        <NewPlace />
+      </Route>
+      <Route path="/places/:placeId">
+        <UpdatePlace />
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+  );
 } else {
-  routes = ();
+  routes = (
+    <Switch>
+      <Route path="/" exact>
+        <Users />
+      </Route>
+      <Route path="/:userId/places/" exact>
+        <UserPlaces />
+      </Route>
+      <Route path="/auth" exact>
+        <Auth />
+      </Route>
+      <Redirect to="/auth" />
+    </Switch>
+  );
 };
 
   return (
@@ -38,24 +67,7 @@ if(isLogin){
         <Router>
           <MainNavigation />
           <main>
-            <Switch>
-              <Route path="/auth" exact>
-                <Auth />
-              </Route>
-              <Route path="/" exact>
-                <Users />
-              </Route>
-              <Route path="/:userId/places/" exact>
-                <UserPlaces />
-              </Route>
-              <Route path="/places/new" exact>
-                <NewPlace />
-              </Route>
-              <Route path="/places/:placeId">
-                <UpdatePlace />
-              </Route>
-              <Redirect to="/" />
-            </Switch>
+              {routes}
           </main>
         </Router>
       </AuthContext.Provider>
