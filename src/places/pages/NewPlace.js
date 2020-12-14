@@ -31,9 +31,9 @@ const NewPlace = () => {
 
   return (
     <form className="place-form" onSubmit={placeSubmitHandler}>
-      <Input id='title' element='input' type="text" lable="Title" validators={[VALIDATOR_REQUIRE()]} errorText="Please enter a vailid title" onInput={inputHandler} />
-      <Input id='description' element="textarea" lable="Description" validators={[VALIDATOR_MINLENGTH(5)]} errorText="Please enter a vailid description (min 5 characters)." onInput={inputHandler} />
-      <Input id='address' element="input" lable="Address" validators={[VALIDATOR_REQUIRE()]} errorText="Please enter a vailid address." onInput={inputHandler} />
+      <Input id='title' element='input' type="text" label="Title" validators={[VALIDATOR_REQUIRE()]} errorText="Please enter a vailid title" onInput={inputHandler} />
+      <Input id='description' element="textarea" label="Description" validators={[VALIDATOR_MINLENGTH(5)]} errorText="Please enter a vailid description (min 5 characters)." onInput={inputHandler} />
+      <Input id='address' element="input" label="Address" validators={[VALIDATOR_REQUIRE()]} errorText="Please enter a vailid address." onInput={inputHandler} />
       <Button type='submit' disabled={!formState.isValid}>ADD PLACE</Button>
     </form>
   )
