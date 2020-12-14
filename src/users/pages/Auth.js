@@ -32,6 +32,15 @@ const Auth = () => {
     auth.logIn();
   };
 
+
+  let routes;
+
+  if(isLogin){
+    routes = ();
+  } else {
+    routes = ();
+  };
+
   const switchSignupHandler = () => {
     if(!isLogin) {
       setFormData({
